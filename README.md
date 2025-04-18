@@ -1,85 +1,122 @@
+
 # 🏥 Projet de Gestion de Cabinet Médical
 
-Ce projet a pour but de simuler la gestion d’un cabinet médical, avec la possibilité pour les patients de prendre rendez-vous en ligne, un suivi médical complet, et une interface graphique intuitive.
+Ce projet simule la gestion d’un cabinet médical. Il permet la prise de rendez-vous en ligne, la gestion de dossiers médicaux, l’envoi de rappels automatiques, et la consultation des prescriptions. Le tout repose sur une structure orientée objet en Python 3.1.
+
+---
 
 ## ✅ Fonctionnalités principales
 
 ### 1. 🧑‍⚕️ Gestion des entités
 
-- **Classe Patient**
-  - Informations personnelles (nom, prénom, date de naissance, etc.)
-  - Coordonnées de contact
-  - Historique médical
+- **Classe `Patient`**
+  - Nom, prénom, date de naissance
+  - Adresse, téléphone, email
+  - Numéro de sécurité sociale
+  - Liste des allergies
+  - Liste des antécédents médicaux
 
-- **Classe Médecin**
-  - Informations professionnelles (nom, spécialité, disponibilités)
-  - Liste des patients suivis
+- **Classe `Medecin`**
+  - Nom, prénom, spécialité
+  - Numéro RPPS
+  - Adresse du cabinet, téléphone, email
 
-- **Classe Rendez-vous**
+- **Classe `RendezVous`**
+  - Identifiant
+  - Date et heure du rendez-vous
+  - Lien avec un `Patient` et un `Medecin`
+  - Motif du rendez-vous
+  - Statut (`Planifie`, `Confirme`, `Annule`, `Effectue`)
+
+- **Classe `DossierMedical`**
+  - ID du dossier
+  - Date de création
+  - Liste des consultations passées (`Consultation`)
+  - Liste des traitements en cours (`Traitement`, à définir)
+
+- **Classe `Consultation`**
+  - ID de la consultation
   - Date et heure
-  - Médecin concerné
-  - Patient concerné
-  - Statut (planifié, annulé, terminé)
+  - Motif, diagnostic, notes
+  - Lien vers une prescription (`Prescription`)
+  - Médecin responsable
 
-- **Classe Dossier Médical**
-  - Historique des consultations
-  - Traitements prescrits
-  - Allergies, antécédents, etc.
+- **Classe `Prescription`**
+  - ID de l’ordonnance
+  - Date de prescription
+  - Posologie et instructions
+  - Médicaments associés (liste de `Medicament`)
+  - Patient et médecin liés à la prescription
 
-- **Classe Prescription**
-  - Médicaments prescrits
-  - Posologie
-  - Durée du traitement
+- **Classe `Medicament`**
+  - Nom commercial et générique
+  - Dosage
+  - Forme (comprimé, sirop, etc.)
+
+- **Classe `RappelAutomatique`**
+  - ID du rappel
+  - Type de rappel (`Email`, `SMS`)
+  - Date d’envoi
+  - Statut (`Planifie`, `Envoye`, `Erreur`)
+  - Lié à un `RendezVous`
 
 ---
 
 ### 2. 📅 Prise de rendez-vous en ligne
 
-- Interface pour choisir un médecin, une date et une heure
+- Choix du médecin, de la date et de l’heure
 - Affichage des créneaux disponibles
-- Validation et enregistrement du rendez-vous
+- Enregistrement dans une instance `RendezVous`
 
 ---
 
 ### 3. 🔔 Système de rappel automatique
 
-- Rappel des rendez-vous par email ou SMS
-- Notification des annulations ou modifications
+- Classe `RappelAutomatique` pour chaque `RendezVous`
+- Rappel envoyé par :
+  - Email (via `smtplib`)
+  - SMS (via API type Twilio)
+- Suivi de l’état du rappel (planifié, envoyé, erreur)
 
 ---
 
 ### 4. 📂 Gestion des dossiers médicaux
 
-- Visualisation et édition de l’historique médical
-- Ajout de nouvelles consultations
-- Archivage sécurisé
+- Chaque patient a un `DossierMedical` unique
+- Possibilité d’ajouter des `Consultation`
+- Visualisation des traitements en cours
+- Archivage sécurisé (format `.json` ou autre)
 
 ---
 
 ### 5. 💊 Gestion des prescriptions
 
-- Création et édition des ordonnances
-- Lien entre une consultation et une prescription
-- Export en PDF possible
+- Ajout de `Prescription` via une `Consultation`
+- Association de plusieurs `Medicament`
+- Informations sur la posologie et les instructions
+- Éventuel export en PDF (optionnel)
 
 ---
 
 ### 6. 🖥️ Interface graphique
 
-- Application desktop intuitive
-- Navigation fluide entre les différentes sections (patients, médecins, rendez-vous)
-- Utilisation de composants modernes pour une meilleure expérience utilisateur
+- Application desktop (Tkinter / CustomTkinter)
+- Navigation fluide entre :
+  - Liste des patients
+  - Calendrier des rendez-vous
+  - Fiches médecin et dossier médical
+- UI moderne et ergonomique
 
 ---
 
 ## 💡 Technologies utilisées
 
-- **Langage :** Python 3.x  
-- **Interface graphique :** Tkinter/CustomTkinter (à définir)  
-- **Base de données :** fichier.Json 
-- **Notifications :** 
-  - Email via SMTP (`smtplib`)
-  - SMS via API externe (par exemple Twilio)
-- **Structure du projet :**
-  - Programmation orientée objet (POO)
-  - Architecture modulaire (séparation des classes, de l’interface, et de la logique métier)
+| Élément | Détail |
+|--------|--------|
+| **Langage** | Python 3.x |
+| **POO** | Oui, chaque entité est une classe |
+| **Interface** | Tkinter ou CustomTkinter |
+| **Base de données** | `.json` local |
+| **Emails** | SMTP via `smtplib` |
+| **SMS** | API Twilio ou équivalent |
+| **Organisation** | Fichiers séparés : `patient.py`, `medecin.py`, `rendezvous.py`, etc. |
