@@ -1,1 +1,135 @@
-Ebauche de l'interface graphique de l'inscription de l'utilisateur 
+import customtkinter as ctk
+from inscription import Inscription 
+from datetime import datetime
+import re
+
+ctk.set_appearance_mode("System")
+ctk.set_default_color_theme("blue")
+
+
+class AppInscription(ctk.CTk):
+    def __init__(self):
+        super().__init__()
+
+        # Create the main window
+        self.title("Formulaire d'inscription")
+        self.geometry("650x750")
+
+        # Title
+        self.label_title = ctk.CTkLabel(self, text="Formulaire d'inscription", font=ctk.CTkFont(size=20, weight="bold"))
+        self.label_title.pack(pady=20)
+
+        # Create the form fields
+        self.frame = ctk.CTkFrame(self)
+        self.frame.pack(pady=20, padx=20, fill="both", expand=True)
+
+        # Create the labels and entry fields
+        # Last_name
+        self.label_name = ctk.CTkLabel(self.frame, text="Nom:")
+        self.label_name.pack(pady=(20, 5), anchor="w", padx=20)
+        self.entry_name = ctk.CTkEntry(self.frame, width=300)
+        self.entry_name.pack(pady=(0,10), padx=20)
+
+        # First_name
+        self.label_firstname = ctk.CTkLabel(self.frame, text="Prénom:")
+        self.label_firstname.pack(pady=(10, 5), anchor="w", padx=20)
+        self.entry_firstname = ctk.CTkEntry(self.frame, width=300)
+        self.entry_firstname.pack(pady=(0,10), padx=20)
+
+        # Birthdate
+        self.label_birthdate = ctk.CTkLabel(self.frame, text="Date de naissance (JJ/MM/AAAA):")
+        self.label_birthdate.pack(pady=(10, 5), anchor="w", padx=20)
+        self.entry_birthdate = ctk.CTkEntry(self.frame, width=300)
+        self.entry_birthdate.pack(pady=(0,10), padx=20)
+
+        # Email  
+        self.label_email = ctk.CTkLabel(self.frame, text="Email:")
+        self.label_email.pack(pady=(10, 5), anchor="w", padx=20)
+        self.entry_email = ctk.CTkEntry(self.frame, width=300)
+        self.entry_email.pack(pady=(0,10), padx=20)
+
+        # Password
+        self.label_pwd = ctk.CTkLabel(self.frame, text="Mot de passe:")
+        self.label_pwd.pack(pady=(10, 5), anchor="w", padx=20)
+        self.entry_pwd = ctk.CTkEntry(self.frame, width=300, show="*")
+        self.entry_pwd.pack(pady=(0,10), padx=20)
+
+        # Confirm Password
+        self.label_confirm_pwd = ctk.CTkLabel(self.frame, text="Confirmer le mot de passe:")
+        self.label_confirm_pwd.pack(pady=(10, 5), anchor="w", padx=20)
+        self.entry_confirm_pwd = ctk.CTkEntry(self.frame, width=300, show="*")
+        self.entry_confirm_pwd.pack(pady=(0,10), padx=20)
+
+        # Create the submit button
+        self.btn_submit = ctk.CTkButton(self.frame, text="S'inscrire", command=self.signup)
+        self.btn_submit.pack(pady=20, padx=20)
+
+        # Confirmation message
+        self.label_submit = ctk.CTkLabel(self.frame, text="", text_color="green")
+        self.label_submit.pack(pady=10)
+
+    def signup(self):
+        # Get the values from the entry fields
+        name = self.entry_name.get().strip()
+        firstname = self.entry_firstname.get().strip()
+        birthdate = self.entry_birthdate.get().strip()
+        email = self.entry_email.get().strip()
+        password = self.entry_pwd.get().strip()
+        confirm_password = self.entry_confirm_pwd.get().strip()
+
+        # Validate the inputs
+        if not name or not firstname or not birthdate or not email or not password:
+            self.show_message("Tous les champs sont obligatoires.", "error")
+            return
+
+        if not self.validate_email(email):
+            self.show_message("Email invalide.", "error")
+            return
+        
+        if not self.validate_date(birthdate):
+            self.show_message("Date de naissance invalide.", "error")
+            return
+        
+        if password != confirm_password:
+            self.show_message("Les mots de passe ne correspondent pas.", "error")
+            return
+        
+        inscription = Inscription(name, firstname, birthdate, email, password)
+
+        success, message = inscription.register_user()
+
+        self.show_message(message, "success" if success else "error")
+
+        # Clear fields if successful
+        if success:
+            self.erase_fields()
+
+    def validate_date(self, date):
+        pattern = r"^\d{2}/\d{2}/\d{4}$"
+        if not re.match(pattern, date):
+            return False
+        
+        try:
+            day, month, year = map(int, date.split("/"))
+            datetime(year, month, day)  # validate the date
+            return True
+        except ValueError:  
+            return False
+    
+    def validate_email(self, email):
+        pattern = r"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+        return re.match(pattern, email) is not None
+
+    def show_message(self, message, type_message):
+        if type_message == "success":
+            self.label_submit.configure(text=message, text_color="green")
+        else:
+            self.label_submit.configure(text=message, text_color="red")
+    
+    def erase_fields(self):
+        self.entry_name.delete(0, 'end')
+        self.entry_firstname.delete(0, 'end')
+        self.entry_birthdate.delete(0, 'end')
+        self.entry_email.delete(0, 'end')
+        self.entry_pwd.delete(0, 'end')
+        self.entry_confirm_pwd.delete(0, 'end')
