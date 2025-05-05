@@ -1,0 +1,102 @@
+import json
+import os
+
+USER_DB_FILE = "users.json"
+
+class Inscription:
+    def __init__(self, name, firstname, birthdate, email, password):
+        self.name = name
+        self.firstname = firstname
+        self.birthdate = birthdate
+        self.email = email
+        self.password = password
+        # Par défaut, un utilisateur inscrit via ce formulaire est un patient
+        self.role = "patient"
+
+    def load_users(self):
+        if not os.path.exists(USER_DB_FILE):
+            return []
+        try:
+            with open(USER_DB_FILE, "r") as f:
+                data = json.read(f)
+                return data if isinstance(data, list) else []
+        except json.JSONDecodeError:
+            print("Erreur de décodage du fichier {USER_DB_FILE}. Le fichier peut être corrompu.")
+            return []
+        except Exception as e:
+            print(f"Erreur lors de la lecture du fichier {USER_DB_FILE} : {e}")
+            return []
+            
+    def save_users(self, users_list):
+        try:
+            with open(USER_DB_FILE, "w") as f:
+                json.dump(users_list, f, indent=4)
+                return True
+        except Exception as e:
+            print(f"Erreur lors de l'écriture dans le fichier {USER_DB_FILE} : {e}")
+            return False
+            
+
+
+    def register_user(self):
+        users = self.load_users()
+
+        # Vérifier si l'email existe déjà
+        for user in users:
+            if user.get("email") == self.email:
+                return False, f"Cet email : { self.email} est déjà utilisé."
+        
+        new_user_data = {
+            "name": self.name,
+            "firstname": self.firstname,
+            "birthdate": self.birthdate,
+            "email": self.email,
+            "password": self.password,
+            "role": self.role
+            #"allergies": [] # Liste vide par défaut pour les nouveaux patients
+        }
+
+        users.append(new_user_data)
+
+        if self.save_users(users):
+            return True," Inscription réussie !"
+        else:
+            return False, "Erreur lors de l'enregistrement de l'utilisateur."
+
+    def enregistrer_dans_fichier(self):
+        ligne = f"{self.name};{self.firstname};{self.birthdate};{self.email};{self.password}\n"
+        try:
+            with open("inscriptions.txt", "a") as fichier:
+                fichier.write(ligne)
+            return True, "Inscription enregistrée avec succès !"
+        except Exception as e:
+            return False, f"Erreur lors de l'enregistrement : {e}"
+
+
+# Programme principal
+# def main():
+#     # Demander les informations à l'utilisateur
+#     nom = input("Entrez votre nom : ")
+#     prenom = input("Entrez votre prénom : ")
+#     date_naissance = input("Entrez votre date de naissance (JJ/MM/AAAA) : ")
+#     email = input("Entrez votre email : ")
+#     mot_de_passe = input("Entrez votre mot de passe : ")
+
+#     # Créer une instance de la classe Inscription
+#     utilisateur = Inscription(nom, prenom, date_naissance, email, mot_de_passe)
+
+#     # Enregistrer dans le fichier
+#     if utilisateur.enregistrer_dans_fichier():
+#         print("\nInscription enregistrée avec succès !")
+#         print("\nInformations enregistrées :")
+#         print(f"Nom : {utilisateur.name}")
+#         print(f"Prénom : {utilisateur.firstname}")
+#         print(f"Date de naissance : {utilisateur.birthdate}")
+#         print(f"Email : {utilisateur.email}")
+#         print(f"Mot de passe : {'*' * len(utilisateur.password)}")
+#     else:
+#         print("Erreur lors de l'enregistrement de l'inscription.")
+
+
+# if __name__ == "__main__":
+#     main()
