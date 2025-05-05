@@ -1,0 +1,4 @@
+from interfaceInscription import AppInscription
+if __name__ == "__main__":
+    app = AppInscription()
+    app.mainloop()
