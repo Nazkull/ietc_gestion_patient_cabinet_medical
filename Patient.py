@@ -1,5 +1,5 @@
 class Patient:
-    def __init__(self, first_name, last_name, age, patient_id, phone_number, email):
+    def __init__(self, first_name, last_name, age, patient_id, phone_number, email, address):
         #constructeur patient
         self.first_name = first_name
         self.last_name = last_name
@@ -7,9 +7,10 @@ class Patient:
         self.patient_id = patient_id
         self.phone_number = phone_number
         self.email = email
+        self.address = address
 #fonction pour afficher les infos du patient
     def show_info(self):
-        return f"Patient ID: {self.patient_id}\nName: {self.first_name} {self.last_name}\nAge: {self.age} years old\nPhone: {self.phone_number}\nEmail: {self.email}"
+        return f"Patient ID: {self.patient_id}\nName: {self.first_name} {self.last_name}\nAge: {self.age} years old\nPhone: {self.phone_number}\nEmail: {self.email}\nAddress: {self.address}"
 
 
 
