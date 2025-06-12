@@ -1,19 +1,5 @@
 import json
-from datetime import datetime, timedelta
-
-class Patient:
-    def __init__(self, patient_id, nom, prenom, email, telephone):
-        self.patient_id = patient_id
-        self.nom = nom
-        self.prenom = prenom
-        self.email = email
-        self.telephone = telephone
-
-class Medecin:
-    def __init__(self, medecin_id, nom, specialite):
-        self.medecin_id = medecin_id
-        self.nom = nom
-        self.specialite = specialite
+from datetime import datetime, timedelta, Patient, Medecin
 
 class RDV:
     def __init__(self, rdv_id, patient, medecin, date_heure, duree_minutes):
