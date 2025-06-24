@@ -1,3 +1,4 @@
 models/__pycache__/user.cpython-313.pyc
 app.log
 *.pyc
+/.vs
