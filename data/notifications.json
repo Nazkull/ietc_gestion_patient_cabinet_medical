@@ -1,0 +1,470 @@
+[
+    {
+        "notification_id": "NOTIF-1",
+        "user_id": "PAT-1",
+        "title": "Bienvenue sur le système",
+        "message": "Bienvenue sur le système de gestion de rendez-vous médicaux. Vous pouvez maintenant prendre des rendez-vous avec nos médecins.",
+        "notification_type": "system",
+        "status": "read",
+        "created_at": "2025-06-22T10:00:00"
+    },
+    {
+        "notification_id": "NOTIF-2",
+        "user_id": "PAT-13",
+        "title": "Confirmation de Rendez-vous",
+        "message": "Votre rendez-vous avec Dr. Martin le 25/06/2025 à 14:00 a été confirmé. ID: APT-3",
+        "notification_type": "appointment_confirmation",
+        "status": "unread",
+        "created_at": "2025-06-22T14:30:00"
+    },
+    {
+        "notification_id": "NOTIF-3",
+        "user_id": "PAT-15",
+        "title": "Rappel de Rendez-vous",
+        "message": "Rappel : Vous avez un rendez-vous avec Dr. Garcia le 23/06/2025 à 09:00",
+        "notification_type": "reminder",
+        "status": "unread",
+        "created_at": "2025-06-22T16:00:00"
+    },
+    {
+        "notification_id": "NOTIF-4",
+        "user_id": "DR-4",
+        "title": "Nouveau Rendez-vous",
+        "message": "Un nouveau rendez-vous a été pris par Marie Dupont pour le 26/06/2025 à 10:00. Raison: Consultation générale",
+        "notification_type": "new_appointment",
+        "status": "unread",
+        "created_at": "2025-06-22T17:15:00"
+    },
+    {
+        "notification_id": "NOTIF-5",
+        "user_id": "SEC-1",
+        "title": "Rendez-vous en Attente",
+        "message": "5 rendez-vous sont en attente de confirmation. Veuillez les traiter dans les plus brefs délais.",
+        "notification_type": "pending_appointments",
+        "status": "unread",
+        "created_at": "2025-06-22T18:00:00"
+    },
+    {
+        "notification_id": "NOTIF-6",
+        "user_id": "PAT-13",
+        "title": "Annulation de Rendez-vous",
+        "message": "Votre rendez-vous avec Dr. Martin le 25/06/2025 à 14:00 a été annulé. Veuillez prendre un nouveau rendez-vous.",
+        "notification_type": "appointment_cancellation",
+        "status": "unread",
+        "created_at": "2025-06-22T19:30:00"
+    },
+    {
+        "notification_id": "NOTIF-7",
+        "user_id": "DR-6",
+        "title": "Modification d'Horaire",
+        "message": "Votre horaire a été modifié pour le 24/06/2025. Vous commencez à 08:00 au lieu de 09:00.",
+        "notification_type": "schedule_change",
+        "status": "unread",
+        "created_at": "2025-06-22T20:00:00"
+    },
+    {
+        "notification_id": "NOTIF-8",
+        "user_id": "PAT-1",
+        "title": "Résultats d'Analyses",
+        "message": "Vos résultats d'analyses sont disponibles. Veuillez contacter le secrétariat pour les récupérer.",
+        "notification_type": "results_available",
+        "status": "unread",
+        "created_at": "2025-06-22T21:00:00"
+    },
+    {
+        "notification_id": "NOTIF-9",
+        "user_id": "PAT-1",
+        "title": "Confirmation de Rendez-vous",
+        "message": "Votre rendez-vous avec le médecin le 26/06/2025 à 07:00 a été confirmé. ID: APT-14",
+        "notification_type": "appointment_confirmation",
+        "status": "unread",
+        "created_at": "2025-06-22T19:42:19.627067"
+    },
+    {
+        "notification_id": "NOTIF-10",
+        "user_id": "DR-4",
+        "title": "Nouveau Rendez-vous",
+        "message": "Un nouveau rendez-vous a été pris par le patient pour le 26/06/2025 à 07:00. Raison: mal aux boutons",
+        "notification_type": "new_appointment",
+        "status": "unread",
+        "created_at": "2025-06-22T19:42:19.628807"
+    },
+    {
+        "notification_id": "NOTIF-11",
+        "user_id": "PAT-1",
+        "title": "Annulation de Rendez-vous",
+        "message": "Votre rendez-vous avec le médecin du 26/06/2025 à 07:00 a été annulé. Veuillez prendre un nouveau rendez-vous.",
+        "notification_type": "appointment_cancellation",
+        "status": "unread",
+        "created_at": "2025-06-22T19:44:16.312110"
+    },
+    {
+        "notification_id": "NOTIF-12",
+        "user_id": "DR-4",
+        "title": "Rendez-vous Annulé",
+        "message": "Le rendez-vous avec le patient du 26/06/2025 à 07:00 a été annulé.",
+        "notification_type": "appointment_cancellation",
+        "status": "unread",
+        "created_at": "2025-06-22T19:44:16.317641"
+    },
+    {
+        "notification_id": "NOTIF-13",
+        "user_id": "PAT-1",
+        "title": "Confirmation de Rendez-vous",
+        "message": "Votre rendez-vous avec le médecin le 26/06/2025 à 11:00 a été confirmé. ID: APT-15",
+        "notification_type": "appointment_confirmation",
+        "status": "unread",
+        "created_at": "2025-06-22T19:48:11.993996"
+    },
+    {
+        "notification_id": "NOTIF-14",
+        "user_id": "DR-4",
+        "title": "Nouveau Rendez-vous",
+        "message": "Un nouveau rendez-vous a été pris par le patient pour le 26/06/2025 à 11:00. Raison: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "notification_type": "new_appointment",
+        "status": "unread",
+        "created_at": "2025-06-22T19:48:11.996054"
+    },
+    {
+        "notification_id": "NOTIF-15",
+        "user_id": "PAT-1",
+        "title": "Annulation de Rendez-vous",
+        "message": "Votre rendez-vous avec le médecin du 26/06/2025 à 11:00 a été annulé. Veuillez prendre un nouveau rendez-vous.",
+        "notification_type": "appointment_cancellation",
+        "status": "unread",
+        "created_at": "2025-06-22T19:49:13.708053"
+    },
+    {
+        "notification_id": "NOTIF-16",
+        "user_id": "DR-4",
+        "title": "Rendez-vous Annulé",
+        "message": "Le rendez-vous avec le patient du 26/06/2025 à 11:00 a été annulé.",
+        "notification_type": "appointment_cancellation",
+        "status": "unread",
+        "created_at": "2025-06-22T19:49:13.715310"
+    },
+    {
+        "notification_id": "NOTIF-17",
+        "user_id": "PAT-1",
+        "title": "Confirmation de Rendez-vous",
+        "message": "Votre rendez-vous avec le médecin le 27/06/2025 à 08:00 a été confirmé. ID: APT-16",
+        "notification_type": "appointment_confirmation",
+        "status": "unread",
+        "created_at": "2025-06-22T19:56:34.062824"
+    },
+    {
+        "notification_id": "NOTIF-18",
+        "user_id": "DR-3",
+        "title": "Nouveau Rendez-vous",
+        "message": "Un nouveau rendez-vous a été pris par le patient pour le 27/06/2025 à 08:00. Raison: aelaeaeaeaeaeaeaeaeaa",
+        "notification_type": "new_appointment",
+        "status": "unread",
+        "created_at": "2025-06-22T19:56:34.064572"
+    },
+    {
+        "notification_id": "NOTIF-19",
+        "user_id": "PAT-1",
+        "title": "Annulation de Rendez-vous",
+        "message": "Votre rendez-vous avec le médecin du 27/06/2025 à 08:00 a été annulé. Veuillez prendre un nouveau rendez-vous.",
+        "notification_type": "appointment_cancellation",
+        "status": "unread",
+        "created_at": "2025-06-22T19:57:24.077204"
+    },
+    {
+        "notification_id": "NOTIF-20",
+        "user_id": "DR-3",
+        "title": "Rendez-vous Annulé",
+        "message": "Le rendez-vous avec le patient du 27/06/2025 à 08:00 a été annulé.",
+        "notification_type": "appointment_cancellation",
+        "status": "unread",
+        "created_at": "2025-06-22T19:57:24.079660"
+    },
+    {
+        "notification_id": "NOTIF-21",
+        "user_id": "PAT-13",
+        "title": "Rendez-vous en Attente",
+        "message": "Votre rendez-vous avec le médecin du 26/06/2025 à 14:00 est en attente de confirmation par le secrétariat.",
+        "notification_type": "appointment_pending",
+        "status": "unread",
+        "created_at": "2025-06-23T05:23:05.727628"
+    },
+    {
+        "notification_id": "NOTIF-22",
+        "user_id": "DR-7",
+        "title": "Nouveau Rendez-vous",
+        "message": "Un nouveau rendez-vous a été pris par le patient pour le 26/06/2025 à 14:00. Raison: Test rappel",
+        "notification_type": "new_appointment",
+        "status": "unread",
+        "created_at": "2025-06-23T05:23:05.729286"
+    },
+    {
+        "notification_id": "NOTIF-23",
+        "user_id": "PAT-1",
+        "title": "Confirmation de Rendez-vous",
+        "message": "Votre rendez-vous avec le médecin le 24/06/2025 à 11:00 a été confirmé. ID: APT-19",
+        "notification_type": "appointment_confirmation",
+        "status": "unread",
+        "created_at": "2025-06-23T21:20:58.165785"
+    },
+    {
+        "notification_id": "NOTIF-24",
+        "user_id": "DR-3",
+        "title": "Nouveau Rendez-vous",
+        "message": "Un nouveau rendez-vous a été pris par le patient pour le 24/06/2025 à 11:00. Raison: jsp",
+        "notification_type": "new_appointment",
+        "status": "unread",
+        "created_at": "2025-06-23T21:20:58.168243"
+    },
+    {
+        "notification_id": "NOTIF-25",
+        "user_id": "PAT-20",
+        "title": "Confirmation de Rendez-vous",
+        "message": "Votre rdv avec le médecin le 24/06/2025 à 15:00 a été confirmé. ID: APT-20",
+        "notification_type": "appointment_confirmation",
+        "status": "unread",
+        "created_at": "2025-06-24T14:27:00.300565"
+    },
+    {
+        "notification_id": "NOTIF-26",
+        "user_id": "DR-3",
+        "title": "Nouveau Rendez-vous",
+        "message": "Un nouveau rdv a été pris par le patient pour le 24/06/2025 à 15:00. Raison: j'ai des douleurs thoracique",
+        "notification_type": "new_appointment",
+        "status": "unread",
+        "created_at": "2025-06-24T14:27:00.302124"
+    },
+    {
+        "notification_id": "NOTIF-27",
+        "user_id": "PAT-13",
+        "title": "Confirmation de Rendez-vous",
+        "message": "Votre rdv avec le médecin le 27/06/2025 à 16:00 a été confirmé. ID: 4",
+        "notification_type": "appointment_confirmation",
+        "status": "unread",
+        "created_at": "2025-06-24T14:33:41.064055"
+    },
+    {
+        "notification_id": "NOTIF-28",
+        "user_id": "DR-6",
+        "title": "Rendez-vous Confirmé",
+        "message": "Le rdv avec le patient du 27/06/2025 à 16:00 a été confirmé.",
+        "notification_type": "appointment_confirmed",
+        "status": "unread",
+        "created_at": "2025-06-24T14:33:41.065305"
+    },
+    {
+        "notification_id": "NOTIF-29",
+        "user_id": "PAT-13",
+        "title": "Rendez-vous Annulé",
+        "message": "Votre rdv avec le médecin du 11/07/2025 à 16:00 a été annulé.",
+        "notification_type": "appointment_cancelled",
+        "status": "unread",
+        "created_at": "2025-06-24T14:33:49.063237"
+    },
+    {
+        "notification_id": "NOTIF-30",
+        "user_id": "DR-5",
+        "title": "Rendez-vous Annulé",
+        "message": "Le rdv avec le patient du 11/07/2025 à 16:00 a été annulé.",
+        "notification_type": "appointment_cancelled",
+        "status": "unread",
+        "created_at": "2025-06-24T14:33:49.064980"
+    },
+    {
+        "notification_id": "NOTIF-31",
+        "user_id": "PAT-15",
+        "title": "Confirmation de Rendez-vous",
+        "message": "Votre rdv avec le médecin le 28/06/2025 à 10:00 a été confirmé. ID: 3",
+        "notification_type": "appointment_confirmation",
+        "status": "unread",
+        "created_at": "2025-06-24T14:34:07.682572"
+    },
+    {
+        "notification_id": "NOTIF-32",
+        "user_id": "DR-7",
+        "title": "Rendez-vous Confirmé",
+        "message": "Le rdv avec le patient du 28/06/2025 à 10:00 a été confirmé.",
+        "notification_type": "appointment_confirmed",
+        "status": "unread",
+        "created_at": "2025-06-24T14:34:07.685726"
+    },
+    {
+        "notification_id": "NOTIF-33",
+        "user_id": "PAT-1",
+        "title": "Rendez-vous en Attente",
+        "message": "Votre rdv avec le médecin du 25/06/2025 à 13:00 est en attente de confirmation.",
+        "notification_type": "appointment_pending",
+        "status": "unread",
+        "created_at": "2025-06-24T14:43:38.097352"
+    },
+    {
+        "notification_id": "NOTIF-34",
+        "user_id": "DR-4",
+        "title": "Nouveau Rendez-vous",
+        "message": "Un nouveau rdv a été pris par le patient pour le 25/06/2025 à 13:00. Raison: trop bu",
+        "notification_type": "new_appointment",
+        "status": "unread",
+        "created_at": "2025-06-24T14:43:38.100879"
+    },
+    {
+        "notification_id": "NOTIF-35",
+        "user_id": "PAT-13",
+        "title": "Rendez-vous en Attente",
+        "message": "Votre rdv avec le médecin du 25/06/2025 à 14:00 est en attente de confirmation.",
+        "notification_type": "appointment_pending",
+        "status": "unread",
+        "created_at": "2025-06-24T18:17:36.140634"
+    },
+    {
+        "notification_id": "NOTIF-36",
+        "user_id": "DR-3",
+        "title": "Nouveau Rendez-vous",
+        "message": "Un nouveau rdv a été pris par le patient pour le 25/06/2025 à 14:00. Raison: testing",
+        "notification_type": "new_appointment",
+        "status": "unread",
+        "created_at": "2025-06-24T18:17:36.143121"
+    },
+    {
+        "notification_id": "NOTIF-37",
+        "user_id": "PAT-21",
+        "title": "Confirmation de Rendez-vous",
+        "message": "Votre rdv avec le médecin le 27/06/2025 à 08:00 a été confirmé. ID: APT-23",
+        "notification_type": "appointment_confirmation",
+        "status": "unread",
+        "created_at": "2025-06-24T18:31:04.421836"
+    },
+    {
+        "notification_id": "NOTIF-38",
+        "user_id": "DR-3",
+        "title": "Nouveau Rendez-vous",
+        "message": "Un nouveau rdv a été pris par le patient pour le 27/06/2025 à 08:00. Raison: testingapp1",
+        "notification_type": "new_appointment",
+        "status": "unread",
+        "created_at": "2025-06-24T18:31:04.424148"
+    },
+    {
+        "notification_id": "NOTIF-39",
+        "user_id": "PAT-1",
+        "title": "Confirmation de Rendez-vous",
+        "message": "Votre rdv avec le médecin le 25/06/2025 à 13:00 a été confirmé. ID: APT-21",
+        "notification_type": "appointment_confirmation",
+        "status": "unread",
+        "created_at": "2025-06-24T18:34:23.589035"
+    },
+    {
+        "notification_id": "NOTIF-40",
+        "user_id": "DR-4",
+        "title": "Rendez-vous Confirmé",
+        "message": "Le rdv avec le patient du 25/06/2025 à 13:00 a été confirmé.",
+        "notification_type": "appointment_confirmed",
+        "status": "unread",
+        "created_at": "2025-06-24T18:34:23.591240"
+    },
+    {
+        "notification_id": "NOTIF-41",
+        "user_id": "PAT-1",
+        "title": "Rendez-vous Supprimé",
+        "message": "Votre rdv avec le médecin du 27/06/2025 à 09:00 a été supprimé.",
+        "notification_type": "appointment_deleted",
+        "status": "unread",
+        "created_at": "2025-06-24T18:39:04.586301"
+    },
+    {
+        "notification_id": "NOTIF-42",
+        "user_id": "DR-4",
+        "title": "Rendez-vous Supprimé",
+        "message": "Le rdv avec le patient du 27/06/2025 à 09:00 a été supprimé.",
+        "notification_type": "appointment_deleted",
+        "status": "unread",
+        "created_at": "2025-06-24T18:39:04.590024"
+    },
+    {
+        "notification_id": "NOTIF-43",
+        "user_id": "PAT-1",
+        "title": "Rendez-vous Supprimé",
+        "message": "Votre rdv avec le médecin du 26/06/2025 à 09:00 a été supprimé.",
+        "notification_type": "appointment_deleted",
+        "status": "unread",
+        "created_at": "2025-06-24T18:39:09.340788"
+    },
+    {
+        "notification_id": "NOTIF-44",
+        "user_id": "DR-4",
+        "title": "Rendez-vous Supprimé",
+        "message": "Le rdv avec le patient du 26/06/2025 à 09:00 a été supprimé.",
+        "notification_type": "appointment_deleted",
+        "status": "unread",
+        "created_at": "2025-06-24T18:39:09.343206"
+    },
+    {
+        "notification_id": "NOTIF-45",
+        "user_id": "PAT-1",
+        "title": "Rendez-vous Supprimé",
+        "message": "Votre rdv avec le médecin du 28/06/2025 à 12:00 a été supprimé.",
+        "notification_type": "appointment_deleted",
+        "status": "unread",
+        "created_at": "2025-06-24T18:39:13.148705"
+    },
+    {
+        "notification_id": "NOTIF-46",
+        "user_id": "DR-5",
+        "title": "Rendez-vous Supprimé",
+        "message": "Le rdv avec le patient du 28/06/2025 à 12:00 a été supprimé.",
+        "notification_type": "appointment_deleted",
+        "status": "unread",
+        "created_at": "2025-06-24T18:39:13.152124"
+    },
+    {
+        "notification_id": "NOTIF-47",
+        "user_id": "PAT-13",
+        "title": "Rendez-vous en Attente",
+        "message": "Votre rdv avec le médecin du 26/06/2025 à 11:00 est en attente de confirmation.",
+        "notification_type": "appointment_pending",
+        "status": "unread",
+        "created_at": "2025-06-24T19:04:25.261588"
+    },
+    {
+        "notification_id": "NOTIF-48",
+        "user_id": "DR-8",
+        "title": "Nouveau Rendez-vous",
+        "message": "Un nouveau rdv a été pris par le patient pour le 26/06/2025 à 11:00. Raison: testingfortommorow",
+        "notification_type": "new_appointment",
+        "status": "unread",
+        "created_at": "2025-06-24T19:04:25.263792"
+    },
+    {
+        "notification_id": "NOTIF-49",
+        "user_id": "PAT-1",
+        "title": "Confirmation de Rendez-vous",
+        "message": "Votre rdv avec le médecin le 27/06/2025 à 10:00 a été confirmé. ID: APT-25",
+        "notification_type": "appointment_confirmation",
+        "status": "unread",
+        "created_at": "2025-06-24T19:50:04.431131"
+    },
+    {
+        "notification_id": "NOTIF-50",
+        "user_id": "DR-4",
+        "title": "Nouveau Rendez-vous",
+        "message": "Un nouveau rdv a été pris par le patient pour le 27/06/2025 à 10:00. Raison: jijijiji",
+        "notification_type": "new_appointment",
+        "status": "unread",
+        "created_at": "2025-06-24T19:50:04.433781"
+    },
+    {
+        "notification_id": "NOTIF-51",
+        "user_id": "PAT-1",
+        "title": "Confirmation de Rendez-vous",
+        "message": "Votre rdv avec le médecin le 27/06/2025 à 10:00 a été confirmé. ID: APT-26",
+        "notification_type": "appointment_confirmation",
+        "status": "unread",
+        "created_at": "2025-06-24T19:52:26.667020"
+    },
+    {
+        "notification_id": "NOTIF-52",
+        "user_id": "DR-6",
+        "title": "Nouveau Rendez-vous",
+        "message": "Un nouveau rdv a été pris par le patient pour le 27/06/2025 à 10:00. Raison: jiaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "notification_type": "new_appointment",
+        "status": "unread",
+        "created_at": "2025-06-24T19:52:26.669199"
+    }
+]
