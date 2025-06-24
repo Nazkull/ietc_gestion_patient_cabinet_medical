@@ -1,7 +1,6 @@
 babel==2.17.0 ;
 customtkinter==5.2.2 ;
 darkdetect==0.8.0 ;
-graphviz==0.20.1 ;
 packaging==25.0 ;
 pillow==11.2.1 ;
 schedule==1.2.2 ;
